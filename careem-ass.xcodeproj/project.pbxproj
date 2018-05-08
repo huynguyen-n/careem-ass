@@ -12,6 +12,7 @@
 		003BA7DD20A191D200187AC5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 003BA7DB20A191D200187AC5 /* Main.storyboard */; };
 		003BA7DF20A191D300187AC5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 003BA7DE20A191D300187AC5 /* Assets.xcassets */; };
 		003BA7E220A191D300187AC5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 003BA7E020A191D300187AC5 /* LaunchScreen.storyboard */; };
+		003BA7FE20A1986400187AC5 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 003BA7FD20A1986400187AC5 /* Constants.swift */; };
 		3531F25463F874F908384FCB /* Pods_careem_ass.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 19D1A2379E9DCAF327EEF2CD /* Pods_careem_ass.framework */; };
 /* End PBXBuildFile section */
 
@@ -23,6 +24,7 @@
 		003BA7DE20A191D300187AC5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		003BA7E120A191D300187AC5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		003BA7E320A191D300187AC5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		003BA7FD20A1986400187AC5 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		19D1A2379E9DCAF327EEF2CD /* Pods_careem_ass.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_careem_ass.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7251FB069387387DDC88C156 /* Pods-careem-ass.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-careem-ass.release.xcconfig"; path = "Pods/Target Support Files/Pods-careem-ass/Pods-careem-ass.release.xcconfig"; sourceTree = "<group>"; };
 		8EE9307D6AEF78FF309351FD /* Pods-careem-ass.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-careem-ass.debug.xcconfig"; path = "Pods/Target Support Files/Pods-careem-ass/Pods-careem-ass.debug.xcconfig"; sourceTree = "<group>"; };
@@ -61,14 +63,127 @@
 		003BA7D620A191D200187AC5 /* careem-ass */ = {
 			isa = PBXGroup;
 			children = (
-				003BA7D720A191D200187AC5 /* AppDelegate.swift */,
-				003BA7D920A191D200187AC5 /* ViewController.swift */,
-				003BA7DB20A191D200187AC5 /* Main.storyboard */,
-				003BA7DE20A191D300187AC5 /* Assets.xcassets */,
-				003BA7E020A191D300187AC5 /* LaunchScreen.storyboard */,
-				003BA7E320A191D300187AC5 /* Info.plist */,
+				003BA7ED20A1970200187AC5 /* Source Code */,
+				003BA7EC20A196FC00187AC5 /* Shared */,
+				003BA7EB20A196F200187AC5 /* Configuration */,
+				003BA7EA20A196E600187AC5 /* Resources */,
+				003BA7E920A196D600187AC5 /* AppDelegate */,
 			);
 			path = "careem-ass";
+			sourceTree = "<group>";
+		};
+		003BA7E920A196D600187AC5 /* AppDelegate */ = {
+			isa = PBXGroup;
+			children = (
+				003BA7D720A191D200187AC5 /* AppDelegate.swift */,
+			);
+			name = AppDelegate;
+			sourceTree = "<group>";
+		};
+		003BA7EA20A196E600187AC5 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				003BA7F020A1972E00187AC5 /* Storyboard */,
+				003BA7EF20A1972600187AC5 /* Assets */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		003BA7EB20A196F200187AC5 /* Configuration */ = {
+			isa = PBXGroup;
+			children = (
+				003BA7E320A191D300187AC5 /* Info.plist */,
+				003BA7FD20A1986400187AC5 /* Constants.swift */,
+			);
+			name = Configuration;
+			sourceTree = "<group>";
+		};
+		003BA7EC20A196FC00187AC5 /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+				003BA7F520A1976900187AC5 /* Error */,
+				003BA7F420A1976000187AC5 /* Identifier */,
+				003BA7F320A1975D00187AC5 /* App */,
+				003BA7F220A1975600187AC5 /* Register */,
+				003BA7F120A1974F00187AC5 /* Base */,
+			);
+			name = Shared;
+			sourceTree = "<group>";
+		};
+		003BA7ED20A1970200187AC5 /* Source Code */ = {
+			isa = PBXGroup;
+			children = (
+				003BA7F620A1981300187AC5 /* Movie */,
+				003BA7EE20A1970C00187AC5 /* Networking */,
+			);
+			name = "Source Code";
+			sourceTree = "<group>";
+		};
+		003BA7EE20A1970C00187AC5 /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Networking;
+			sourceTree = "<group>";
+		};
+		003BA7EF20A1972600187AC5 /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				003BA7DE20A191D300187AC5 /* Assets.xcassets */,
+			);
+			name = Assets;
+			sourceTree = "<group>";
+		};
+		003BA7F020A1972E00187AC5 /* Storyboard */ = {
+			isa = PBXGroup;
+			children = (
+				003BA7DB20A191D200187AC5 /* Main.storyboard */,
+				003BA7E020A191D300187AC5 /* LaunchScreen.storyboard */,
+			);
+			name = Storyboard;
+			sourceTree = "<group>";
+		};
+		003BA7F120A1974F00187AC5 /* Base */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Base;
+			sourceTree = "<group>";
+		};
+		003BA7F220A1975600187AC5 /* Register */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Register;
+			sourceTree = "<group>";
+		};
+		003BA7F320A1975D00187AC5 /* App */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = App;
+			sourceTree = "<group>";
+		};
+		003BA7F420A1976000187AC5 /* Identifier */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Identifier;
+			sourceTree = "<group>";
+		};
+		003BA7F520A1976900187AC5 /* Error */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Error;
+			sourceTree = "<group>";
+		};
+		003BA7F620A1981300187AC5 /* Movie */ = {
+			isa = PBXGroup;
+			children = (
+				003BA7D920A191D200187AC5 /* ViewController.swift */,
+			);
+			name = Movie;
 			sourceTree = "<group>";
 		};
 		6B1EBD7E2A813BC9ACB2BB08 /* Pods */ = {
@@ -184,7 +299,6 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-careem-ass/Pods-careem-ass-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
-				"${BUILT_PRODUCTS_DIR}/AudioPlayerSwift/AudioPlayer.framework",
 				"${BUILT_PRODUCTS_DIR}/ObjectMapper/ObjectMapper.framework",
 				"${BUILT_PRODUCTS_DIR}/PromiseKit/PromiseKit.framework",
 				"${BUILT_PRODUCTS_DIR}/ReSwift/ReSwift.framework",
@@ -193,7 +307,6 @@
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AudioPlayer.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ObjectMapper.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PromiseKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ReSwift.framework",
@@ -228,6 +341,7 @@
 			files = (
 				003BA7DA20A191D200187AC5 /* ViewController.swift in Sources */,
 				003BA7D820A191D200187AC5 /* AppDelegate.swift in Sources */,
+				003BA7FE20A1986400187AC5 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -375,7 +489,10 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = L76363ZU66;
 				INFOPLIST_FILE = "careem-ass/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.br.careem-ass";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -391,7 +508,10 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = L76363ZU66;
 				INFOPLIST_FILE = "careem-ass/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.br.careem-ass";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
