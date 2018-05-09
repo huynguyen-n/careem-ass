@@ -13,6 +13,10 @@
 		003BA7DF20A191D300187AC5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 003BA7DE20A191D300187AC5 /* Assets.xcassets */; };
 		003BA7E220A191D300187AC5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 003BA7E020A191D300187AC5 /* LaunchScreen.storyboard */; };
 		003BA7FE20A1986400187AC5 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 003BA7FD20A1986400187AC5 /* Constants.swift */; };
+		003BA80220A1992100187AC5 /* FetchMovieList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 003BA7FF20A1992000187AC5 /* FetchMovieList.swift */; };
+		003BA80320A1992100187AC5 /* Networking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 003BA80020A1992000187AC5 /* Networking.swift */; };
+		003BA80420A1992100187AC5 /* Requestable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 003BA80120A1992100187AC5 /* Requestable.swift */; };
+		003BA80620A19B2A00187AC5 /* Error+Default.swift in Sources */ = {isa = PBXBuildFile; fileRef = 003BA80520A19B2A00187AC5 /* Error+Default.swift */; };
 		3531F25463F874F908384FCB /* Pods_careem_ass.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 19D1A2379E9DCAF327EEF2CD /* Pods_careem_ass.framework */; };
 /* End PBXBuildFile section */
 
@@ -25,6 +29,10 @@
 		003BA7E120A191D300187AC5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		003BA7E320A191D300187AC5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		003BA7FD20A1986400187AC5 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		003BA7FF20A1992000187AC5 /* FetchMovieList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FetchMovieList.swift; sourceTree = "<group>"; };
+		003BA80020A1992000187AC5 /* Networking.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Networking.swift; sourceTree = "<group>"; };
+		003BA80120A1992100187AC5 /* Requestable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Requestable.swift; sourceTree = "<group>"; };
+		003BA80520A19B2A00187AC5 /* Error+Default.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Error+Default.swift"; sourceTree = "<group>"; };
 		19D1A2379E9DCAF327EEF2CD /* Pods_careem_ass.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_careem_ass.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7251FB069387387DDC88C156 /* Pods-careem-ass.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-careem-ass.release.xcconfig"; path = "Pods/Target Support Files/Pods-careem-ass/Pods-careem-ass.release.xcconfig"; sourceTree = "<group>"; };
 		8EE9307D6AEF78FF309351FD /* Pods-careem-ass.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-careem-ass.debug.xcconfig"; path = "Pods/Target Support Files/Pods-careem-ass/Pods-careem-ass.debug.xcconfig"; sourceTree = "<group>"; };
@@ -122,6 +130,9 @@
 		003BA7EE20A1970C00187AC5 /* Networking */ = {
 			isa = PBXGroup;
 			children = (
+				003BA7FF20A1992000187AC5 /* FetchMovieList.swift */,
+				003BA80020A1992000187AC5 /* Networking.swift */,
+				003BA80120A1992100187AC5 /* Requestable.swift */,
 			);
 			name = Networking;
 			sourceTree = "<group>";
@@ -174,6 +185,7 @@
 		003BA7F520A1976900187AC5 /* Error */ = {
 			isa = PBXGroup;
 			children = (
+				003BA80520A19B2A00187AC5 /* Error+Default.swift */,
 			);
 			name = Error;
 			sourceTree = "<group>";
@@ -340,8 +352,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				003BA7DA20A191D200187AC5 /* ViewController.swift in Sources */,
+				003BA80320A1992100187AC5 /* Networking.swift in Sources */,
 				003BA7D820A191D200187AC5 /* AppDelegate.swift in Sources */,
+				003BA80420A1992100187AC5 /* Requestable.swift in Sources */,
+				003BA80220A1992100187AC5 /* FetchMovieList.swift in Sources */,
 				003BA7FE20A1986400187AC5 /* Constants.swift in Sources */,
+				003BA80620A19B2A00187AC5 /* Error+Default.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
