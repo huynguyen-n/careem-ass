@@ -17,6 +17,8 @@ protocol MoviePresenterOutput: class {
     func loadMore(with pageNumber: Int)
     
     func didSelectRow(_ value: String)
+    
+    func didSelectedRow(at index: IndexPath)
 }
 
 class MoviePresenter {
@@ -65,6 +67,11 @@ extension MoviePresenter: MovieControllerDatasource {
 }
 
 extension MoviePresenter: MovieDataSourceDelegate, SuggestionDataSourceDelegate {
+    
+    func didSelectedRow(at index: IndexPath) {
+        self.output?.didSelectedRow(at: index)
+    }
+    
     
     func didSelectRow(_ value: String) {
         self.output?.didSelectRow(value)

@@ -36,7 +36,9 @@ extension MovieState {
             
             let currStateMovie = state.movies.value
             
-            currStateMovie!.result! += action.movies!.result!
+            currStateMovie?.setPage(action.movies?.page)
+            
+            currStateMovie?.setResult(action.movies?.result)
             
             state.movies.value = currStateMovie
             

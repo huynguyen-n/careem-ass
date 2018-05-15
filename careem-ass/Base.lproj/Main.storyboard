@@ -51,7 +51,7 @@
                                 <rect key="frame" x="0.0" y="120" width="375" height="547"/>
                                 <subviews>
                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="bXW-14-u9y">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="547"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="327"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </tableView>
                                 </subviews>
@@ -60,7 +60,7 @@
                                     <constraint firstAttribute="trailing" secondItem="bXW-14-u9y" secondAttribute="trailing" id="ByL-TC-0Tz"/>
                                     <constraint firstItem="bXW-14-u9y" firstAttribute="top" secondItem="dZa-eN-0gA" secondAttribute="top" id="KvH-jq-Hfi"/>
                                     <constraint firstItem="bXW-14-u9y" firstAttribute="leading" secondItem="dZa-eN-0gA" secondAttribute="leading" id="bKr-20-Pea"/>
-                                    <constraint firstAttribute="bottom" secondItem="bXW-14-u9y" secondAttribute="bottom" id="xLz-Rm-g2T"/>
+                                    <constraint firstAttribute="bottom" secondItem="bXW-14-u9y" secondAttribute="bottom" constant="220" id="xLz-Rm-g2T"/>
                                 </constraints>
                             </view>
                         </subviews>

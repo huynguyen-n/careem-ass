@@ -36,7 +36,7 @@ class FetchMovieWorker: AsyncWorker {
         
         // Initialize Suggestion
         suggestSet = loadSuggestionList()
-        let action = UpdateSuggestionMovieAct(suggestion: self.suggestSet.sorted())
+        let action = UpdateSuggestionMovieAct(suggestion: self.suggestSet.reversed())
         mainStore.dispatch(action)
         
         // TODO: Do another stuffs, nothing for this case
@@ -52,6 +52,7 @@ class FetchMovieWorker: AsyncWorker {
     
     func searchMovie(withText text: String) -> Promise<T> {
         self.currSearchText = text
+        
         return Networking.shared.fetchMovieList(with: text, page: 1)
             .then { (movieObjs) -> Promise<T> in
                 
@@ -69,7 +70,7 @@ class FetchMovieWorker: AsyncWorker {
     func loadMoreMovie(with text: String, page: Int) -> Promise<T> {
         return Networking.shared.fetchMovieList(with: self.currSearchText, page: page)
             .then { (movieObjs) -> Promise<T> in
-                print(page)
+                
                 let action = UpdateMoreMovieListAct(movies: movieObjs)
                 mainStore.dispatch(action)
                 
@@ -83,13 +84,17 @@ class FetchMovieWorker: AsyncWorker {
             .distinctUntilChanged()
             .subscribe(onNext: { [unowned self] query in
 
-                let action = UpdateSuggestionMovieAct(suggestion: query.isEmpty ? self.suggestSet.sorted() : self.suggestSet?.filter{ $0.contains(query) })
+                let action = UpdateSuggestionMovieAct(suggestion: query.isEmpty ? self.suggestSet.reversed() : self.suggestSet?.filter{ $0.contains(query) })
                 mainStore.dispatch(action)
 
             }).disposed(by: DisposeBag())
     }
     
     func insertSuggestionList() {
+        if suggestSet.count > 10 {
+            var newSet = suggestSet.reversed()
+            suggestSet.remove(newSet.removeLast())
+        }
         suggestSet.insert(self.currSearchText)
         UserDefaults.standard.setSet(value: suggestSet as NSSet?, forKey: Constants.UserDefaultKeys.Suggestion)
     }

@@ -35,10 +35,11 @@ class MovieCell: UITableViewCell {
         lblReleaseDate.text = movie.releaseDate?.reformat(with: releaseDateFormatter)
         lblOverView.text = movie.overview
         
-        guard let strPoster = movie.posterURL, let urlPoster = URL(string: strPoster.getPosterUrl(with: .w780)) else {
+        guard let strPoster = movie.posterURL else {
+            imgPoster.image = #imageLiteral(resourceName: "no_image")
             return
         }
         
-        imgPoster.sd_setImage(with: urlPoster, completed: nil)
+        imgPoster.sd_setImage(with: URL(string: strPoster.getPosterUrl(with: .w780)), placeholderImage: #imageLiteral(resourceName: "placeholder"), options: .cacheMemoryOnly, completed: nil)
     }
 }

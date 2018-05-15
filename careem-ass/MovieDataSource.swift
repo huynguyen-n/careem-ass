@@ -14,6 +14,8 @@ protocol MovieDataSourceDelegate: class {
     
     func loadMore(with pageNumber: Int)
     
+    func didSelectedRow(at index: IndexPath)
+    
     // Reload
     func reloadTableView()
 }
@@ -25,7 +27,6 @@ class MovieDataSource: NSObject {
     fileprivate var movies: Variable<BaseObj<MovieObj>?> {
         return mainStore.state.movieState!.movies
     }
-    private var pageNumber = 1
     
     override init() {
         super.init()
@@ -46,12 +47,11 @@ extension MovieDataSource: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
-        guard let results = movies.value?.result, let totalPages = movies.value?.totalPages else {
+        guard let results = movies.value?.result, let pageNumber = movies.value?.page, let totalPages = movies.value?.totalPages else {
             return
         }
         if indexPath.row == results.count - 1 && pageNumber < totalPages {
-            pageNumber += 1
-            delegate?.loadMore(with: pageNumber)
+            delegate?.loadMore(with: pageNumber + 1)
         }
     }
     
@@ -65,6 +65,9 @@ extension MovieDataSource: UITableViewDataSource {
 
 extension MovieDataSource: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
+        guard let results = self.movies.value?.result else { return }
+        let cell = tableView.dequeueReusableCell(withIdentifier: "MovieCell", for: indexPath) as! MovieCell
+        cell.lblOverView.numberOfLines = 0
+        self.delegate?.didSelectedRow(at: indexPath)
     }
 }
