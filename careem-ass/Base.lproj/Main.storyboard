@@ -26,7 +26,7 @@
             </objects>
             <point key="canvasLocation" x="-1436" y="-34"/>
         </scene>
-        <!--Movie Controller-->
+        <!--THE MOVIE DB-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="MovieController" customModule="careem_ass" customModuleProvider="target" sceneMemberID="viewController">
@@ -82,7 +82,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
-                    <navigationItem key="navigationItem" id="Ipm-VI-Qan"/>
+                    <navigationItem key="navigationItem" title="THE MOVIE DB" id="Ipm-VI-Qan"/>
                     <connections>
                         <outlet property="searchBar" destination="drk-pm-ijd" id="dcz-wv-yVO"/>
                         <outlet property="suggestTableView" destination="bXW-14-u9y" id="d4W-t7-RfX"/>
