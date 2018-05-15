@@ -13,4 +13,9 @@ import PromiseKit
 class Networking {
     
     static let shared = Networking()
+    
+    func fetchMovieList(with text: String, page: Int) -> Promise<BaseObj<MovieObj>?> {
+        let movieObj = FetchMovieList(param: [Constants.APIKey.Query: text, Constants.APIKey.Page: page])
+        return movieObj.toPromise()
+    }
 }

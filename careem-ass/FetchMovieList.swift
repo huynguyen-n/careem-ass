@@ -9,25 +9,24 @@
 import Alamofire
 import ObjectMapper
 
-struct FetchTrackList: Requestable {
+struct FetchMovieList: Requestable {
     
-    var endPoint: String {
-        return ""
-    }
+    typealias T = BaseObj<MovieObj>?
     
-    var httpMethod: HTTPMethod {
-        return .get
-    }
+    var param: Parameters?
     
-    var param: Requestable.Parameters?
+    var httpMethod: HTTPMethod { get { return .get } }
     
-    func decode(data: Any) -> String {
-        return ""
+    var endPoint: String { get { return Constants.APIEndpoint.Search + Constants.APIEndpoint.Movie } }
+    
+    var parameterEncoding: ParameterEncoding { get { return URLEncoding.default } }
+    
+    func decode(data: Any) -> BaseObj<MovieObj>? {
+        let arr = data as? [String: Any]
+        return Mapper<BaseObj<MovieObj>>().map(JSON: arr ?? [:])
     }
     
     init(param: Requestable.Parameters?) {
         self.param = param
     }
-    
-    typealias T = String
 }

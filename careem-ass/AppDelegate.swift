@@ -7,6 +7,9 @@
 //
 
 import UIKit
+import ReSwift
+
+let mainStore = Store<MainAppState>(reducer: { MainAppState(movieState: MovieState.reducer(action: $0, state: $1?.movieState)) }, state: nil, middleware: [])
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {

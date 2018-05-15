@@ -65,8 +65,8 @@ extension Requestable {
         return basePath + endPoint
     }
     
-    var url: URL {
-        return URL(string: urlPath)!
+    var url: URL? {
+        return URL(string: urlPath).addApiKey()
     }
     
     var parameterEncoding: ParameterEncoding {
@@ -103,7 +103,7 @@ extension Requestable {
     
     func buildUrlRequest() -> URLRequest {
         
-        var urlRequest = URLRequest(url: self.url)
+        var urlRequest = URLRequest(url: url!)
         urlRequest.httpMethod = self.httpMethod.rawValue
         urlRequest.timeoutInterval = TimeInterval(10 * 1000)
         var request = try! self.parameterEncoding.encode(urlRequest, with: self.param)
